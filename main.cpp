@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include <strong_types/features/comparable.hpp>
-#include <strong_types/features/output_streamable.hpp>
-#include <strong_types/features/threeway_comparable.hpp>
+#include <strong_types/features/comparable_feature.hpp>
+#include <strong_types/features/output_streamable_feature.hpp>
+#include <strong_types/features/threeway_comparable_feature.hpp>
 #include <strong_types/strong_type.hpp>
 
 using kilometer = strong_types::strong_type<struct kilometer_tag, double, strong_types::regular>;

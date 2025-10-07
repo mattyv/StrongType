@@ -1,6 +1,6 @@
 #pragma once
 
-#include <strong_types/features/equality.hpp>
+#include <strong_types/features/equality_feature.hpp>
 
 namespace strong_types {
 
