@@ -8,7 +8,7 @@ template <typename TDerived, typename T>
 class less_than_comparable_feature
 {
 public:
-    friend bool operator<(TDerived const& lhs, TDerived const& rhs)
+    constexpr friend bool operator<(TDerived const& lhs, TDerived const& rhs)
     requires(requires(T v) {
         { v < v } -> std::same_as<bool>;
     })
@@ -21,7 +21,7 @@ template <typename TDerived, typename T>
 class less_than_equal_comparable_feature
 {
 public:
-    friend bool operator<=(TDerived const& lhs, TDerived const& rhs)
+    constexpr friend bool operator<=(TDerived const& lhs, TDerived const& rhs)
     requires(requires(T v) {
         { v <= v } -> std::same_as<bool>;
     })
@@ -34,7 +34,7 @@ template <typename TDerived, typename T>
 class greater_than_comparable_feature
 {
 public:
-    friend bool operator>(TDerived const& lhs, TDerived const& rhs)
+    constexpr friend bool operator>(TDerived const& lhs, TDerived const& rhs)
     requires(requires(T v) {
         { v > v } -> std::same_as<bool>;
     })
@@ -47,7 +47,7 @@ template <typename TDerived, typename T>
 class greater_than_equal_comparable_feature
 {
 public:
-    friend bool operator>=(TDerived const& lhs, TDerived const& rhs)
+    constexpr friend bool operator>=(TDerived const& lhs, TDerived const& rhs)
     requires(requires(T v) {
         { v >= v } -> std::same_as<bool>;
     })

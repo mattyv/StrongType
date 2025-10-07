@@ -17,26 +17,26 @@ public:
     using pointer = T*;
     using const_pointer = T const*;
 
-    strong_type()
+    constexpr strong_type()
     requires std::default_initializable<T>
     = default;
 
     template <typename U>
-    strong_type(U&& value)
+    constexpr strong_type(U&& value)
     requires std::convertible_to<std::decay_t<U>, value_type>
         : value_{std::forward<U>(value)}
     {}
 
     template <typename... Ts>
-    strong_type(Ts&&... values)
+    constexpr strong_type(Ts&&... values)
     requires std::constructible_from<T, Ts...> && (sizeof...(values) > 1)
         : value_{std::forward<Ts>(values)...}
     {}
 
-    reference underlying_value() { return value_; }
-    const_reference underlying_value() const { return value_; }
-    pointer operator->() { return &value_; }
-    const_pointer operator->() const { return &value_; }
+    constexpr reference underlying_value() { return value_; }
+    constexpr const_reference underlying_value() const { return value_; }
+    constexpr pointer operator->() { return &value_; }
+    constexpr const_pointer operator->() const { return &value_; }
 private:
     value_type value_;
 };
