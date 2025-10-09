@@ -13,7 +13,7 @@ using miles = strong_types::strong_type<
     strong_types::threeway_comparable_feature,
     strong_types::output_streamable>;
 
-int main(int argc, char** argv)
+int main()
 {
     {
         constexpr kilometer k1{100.};

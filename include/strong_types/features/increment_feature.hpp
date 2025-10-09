@@ -8,7 +8,7 @@ template <typename TDerived, typename T>
 class increment
 {
 public:
-    constexpr friend TDerived& operator+(TDerived& lhs)
+    constexpr friend TDerived& operator++(TDerived& lhs)
     requires(requires(T v) {
         { ++v } -> std::same_as<T&>;
     })
@@ -17,7 +17,7 @@ public:
         return lhs;
     }
 
-    constexpr friend TDerived operator+(TDerived& lhs, int)
+    constexpr friend TDerived operator++(TDerived& lhs, int)
     requires(requires(T v) {
         { ++v } -> std::same_as<T&>;
     })
